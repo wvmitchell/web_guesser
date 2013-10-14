@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'sinatra/reloader'
 
 random ||= rand(100).to_s
 
@@ -8,5 +7,5 @@ get '/hello' do
 end
 
 get '/' do
-  "Hello, World. The secret number is #{random}"
+  erb :index, :locals => {:random => random}
 end
